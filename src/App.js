@@ -3,6 +3,8 @@ import uuid from 'uuid/v4';
 
 
 import DeleteIcon from '@material-ui/icons/Delete';
+import AddBoxIcon from '@material-ui/icons/AddBox';
+import IconButton from '@material-ui/core/IconButton';
 import { initialTodos } from './utils/db';
 import { filterReducer, todoReducer } from './utils/reducers';
 
@@ -25,7 +27,11 @@ const App = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatchTodos({ type: 'ADD_TODO', payload: { id: uuid(), task } });
+    if (task.trim() === '') {
+      alert('Sorry, you cannot add an empty todo!')
+    } else {
+      dispatchTodos({ type: 'ADD_TODO', payload: { id: uuid(), task } });
+    }
     setTask('');
   };
   const handleChangeCheckbox = id => {
@@ -42,6 +48,10 @@ const App = () => {
 
   const handleShowIncomplete = () => {
     dispatchFilter({ type: 'SHOW_INCOMPLETE' });
+  };
+
+  const handleDeleteClick = id => {
+    dispatchTodos({ type: 'DELETE_TODO', payload: { id } })
   };
 
   const filteredTodos = todos.filter(t => {
@@ -64,14 +74,14 @@ const App = () => {
     <div id='container'>
 
       <div id='filters'>
-        <button className='button' type='button' onClick={handleShowAll}>Show All</button>
-        <button className='button' type='button' onClick={handleShowComplete}>Show Complete</button>
-        <button className='button' type='button' onClick={handleShowIncomplete}>Show Incomplete</button>
+        <button className='buttonFilter' type='button' onClick={handleShowAll}>All</button>
+        <button className='buttonFilter' type='button' onClick={handleShowComplete}>Complete</button>
+        <button className='buttonFilter' type='button' onClick={handleShowIncomplete}>Incomplete</button>
       </div>
 
       {filteredTodos.map(todo => (
-        <div className='listItemContainer'>
-          <label className='checkContainer' key={todo.id}> {todo.task}
+        <div className='listItemContainer' key={todo.id}>
+          <label className='checkContainer'> {todo.task}
             <input
               type='checkbox'
               checked={todo.complete}
@@ -79,14 +89,15 @@ const App = () => {
             />
             <span className='checkmark' />
           </label>
-          <DeleteIcon />
+          <IconButton onClick={() => handleDeleteClick(todo.id)} children={<DeleteIcon />
+          } />
         </div>
       ))
       }
 
       <form onSubmit={handleSubmit}>
-        <input type='text' value={task} onChange={handleChangeInput} />
-        <button className='button' type='submit'>Add todo</button>
+        <input type='text' value={task} onChange={handleChangeInput} placeholder='Type your next todo...' />
+        <IconButton type='submit' children={<AddBoxIcon />} />
       </form>
 
     </div>

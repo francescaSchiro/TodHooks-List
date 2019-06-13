@@ -23,7 +23,8 @@ export const todoReducer = (state, action) => {
                     return todo;
                 }
             });
-
+        case 'DELETE_TODO':
+            return state.filter(todo => todo.id !== action.payload.id);
         case 'ADD_TODO':
             return state.concat({
                 task: action.payload.task,
