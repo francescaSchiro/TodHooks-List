@@ -1,13 +1,15 @@
 ## Used Hooks to manage state of a simple Todo App. 
-**(useReducer, useState, useContext.)**
+**(useReducer, useState, useContext.)** <br>
 I followed [this](https://www.robinwieruch.de/react-state-usereducer-usestate-usecontext/) tutorial and (made few changes on the way)
 
 *This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## To run this project: 
+### To run this project: 
 
 Clone it first:
+```sh
 - `git clone https://github.com/francescaSchiro/TodHooks-List.git`
+```
 
 In the project directory, you can run:
 - `yarn` (in project folder) to install dependencies
