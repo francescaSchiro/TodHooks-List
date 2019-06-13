@@ -2,9 +2,8 @@
 
 > This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 ---
-
-I followed this tutorial and (made few changes)
-[react-state-usereducer-usestate-usecontext](https://www.robinwieruch.de/react-state-usereducer-usestate-usecontext/)
+**Used Hooks to manage state of a simple Todo App. useReducer, useState, useContext.**
+I followed [this](https://www.robinwieruch.de/react-state-usereducer-usestate-usecontext/) tutorial and (made few changes on the way)
 
 ## To run this project: 
 
