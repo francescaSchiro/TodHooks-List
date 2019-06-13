@@ -2,6 +2,7 @@ import React, { useState, useReducer } from "react";
 import uuid from 'uuid/v4';
 
 
+import DeleteIcon from '@material-ui/icons/Delete';
 import { initialTodos } from './utils/db';
 import { filterReducer, todoReducer } from './utils/reducers';
 
@@ -69,15 +70,17 @@ const App = () => {
       </div>
 
       {filteredTodos.map(todo => (
-        <label className='checkContainer' key={todo.id}> {todo.task}
-          <input
-            type='checkbox'
-            checked={todo.complete}
-            onChange={() => handleChangeCheckbox(todo.id)}
-          />
-          <span className='checkmark' />
-        </label>
-        
+        <div className='listItemContainer'>
+          <label className='checkContainer' key={todo.id}> {todo.task}
+            <input
+              type='checkbox'
+              checked={todo.complete}
+              onChange={() => handleChangeCheckbox(todo.id)}
+            />
+            <span className='checkmark' />
+          </label>
+          <DeleteIcon />
+        </div>
       ))
       }
 
