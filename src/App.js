@@ -2,6 +2,9 @@ import React, { useState, useReducer } from "react";
 import uuid from 'uuid/v4';
 
 
+import Filter from './components/Filter';
+
+
 import DeleteIcon from '@material-ui/icons/Delete';
 import AddBoxIcon from '@material-ui/icons/AddBox';
 import IconButton from '@material-ui/core/IconButton';
@@ -38,17 +41,7 @@ const App = () => {
     dispatchTodos({ type: 'TOGGLE_TODO', payload: { id } });
   }
 
-  const handleShowAll = () => {
-    dispatchFilter({ type: 'SHOW_ALL' });
-  };
 
-  const handleShowComplete = () => {
-    dispatchFilter({ type: 'SHOW_COMPLETE' });
-  };
-
-  const handleShowIncomplete = () => {
-    dispatchFilter({ type: 'SHOW_INCOMPLETE' });
-  };
 
   const handleDeleteClick = id => {
     dispatchTodos({ type: 'DELETE_TODO', payload: { id } })
@@ -72,12 +65,7 @@ const App = () => {
 
   return (
     <div id='container'>
-
-      <div id='filters'>
-        <button className='buttonFilter' type='button' onClick={handleShowAll}>All</button>
-        <button className='buttonFilter' type='button' onClick={handleShowComplete}>Complete</button>
-        <button className='buttonFilter' type='button' onClick={handleShowIncomplete}>Incomplete</button>
-      </div>
+      <Filter dispatch={dispatchFilter} />
 
       {filteredTodos.map(todo => (
         <div className='listItemContainer' key={todo.id}>
