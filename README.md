@@ -1,8 +1,9 @@
 
 
-## Available Scripts
+> This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-Followed this tutorial and (made few changes)
+I followed this tutorial and (made few changes)
 [react-state-usereducer-usestate-usecontext](https://www.robinwieruch.de/react-state-usereducer-usestate-usecontext/)
 
 ## To run this project: 
@@ -18,4 +19,3 @@ In the project directory, you can run:
 
 **If you want to know more about Hooks, see [official documentation](https://reactjs.org/docs/hooks-intro.html)**
 
-> This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
