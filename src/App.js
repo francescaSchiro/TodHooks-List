@@ -3,9 +3,9 @@ import uuid from 'uuid/v4';
 
 
 import Filter from './components/Filter';
+import TodoList from './components/TodoList';
 
 
-import DeleteIcon from '@material-ui/icons/Delete';
 import AddBoxIcon from '@material-ui/icons/AddBox';
 import IconButton from '@material-ui/core/IconButton';
 import { initialTodos } from './utils/db';
@@ -37,15 +37,6 @@ const App = () => {
     }
     setTask('');
   };
-  const handleChangeCheckbox = id => {
-    dispatchTodos({ type: 'TOGGLE_TODO', payload: { id } });
-  }
-
-
-
-  const handleDeleteClick = id => {
-    dispatchTodos({ type: 'DELETE_TODO', payload: { id } })
-  };
 
   const filteredTodos = todos.filter(t => {
     if (filter === 'ALL') {
@@ -66,22 +57,8 @@ const App = () => {
   return (
     <div id='container'>
       <Filter dispatch={dispatchFilter} />
+      <TodoList dispatch={dispatchTodos} todos={filteredTodos} />
 
-      {filteredTodos.map(todo => (
-        <div className='listItemContainer' key={todo.id}>
-          <label className='checkContainer'> {todo.task}
-            <input
-              type='checkbox'
-              checked={todo.complete}
-              onChange={() => handleChangeCheckbox(todo.id)}
-            />
-            <span className='checkmark' />
-          </label>
-          <IconButton onClick={() => handleDeleteClick(todo.id)} children={<DeleteIcon />
-          } />
-        </div>
-      ))
-      }
 
       <form onSubmit={handleSubmit}>
         <input type='text' value={task} onChange={handleChangeInput} placeholder='Type your next todo...' />
