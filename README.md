@@ -5,7 +5,6 @@ I followed [this](https://www.robinwieruch.de/react-state-usereducer-usestate-us
 *This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ### To run this project: 
-
 Clone it first:
 ```sh
 git clone https://github.com/francescaSchiro/TodHooks-List.git
