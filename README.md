@@ -16,6 +16,7 @@ In the project directory, you can run:
 yarn
 yarn start
 ```
+
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 *sorry for the design, it wasn't the main goal of the project. I'll try to make it nicer after.*
