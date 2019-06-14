@@ -22,3 +22,5 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 **If you want to know more about Hooks, see [official documentation](https://reactjs.org/docs/hooks-intro.html)**
 
+### Understanding this example you will have learned:
+_'how modern state management is used in React with **useState**, **useReducer** and **useContext**. Whereas useState is used for simple state (e.g. input field), useReducer is a greater asset for complex objects and complicated state transitions. In larger applications, useContext can be used to pass down dispatch functions (or state) from the useReducer hook.'_
