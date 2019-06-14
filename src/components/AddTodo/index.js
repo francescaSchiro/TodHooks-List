@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import uuid from 'uuid/v4';
-
 
 import AddBoxIcon from '@material-ui/icons/AddBox';
 import IconButton from '@material-ui/core/IconButton';
+import { TodoContext } from '../../utils/context';
 
 
+const AddTodo = () => {
+    const dispatch = useContext(TodoContext)
 
-const AddTodo = ({ dispatch }) => {
     const [task, setTask] = useState('');
 
     const handleSubmit = e => {

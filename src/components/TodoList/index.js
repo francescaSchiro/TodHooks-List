@@ -3,12 +3,12 @@ import React from 'react';
 import TodoItem from './TodoItem';
 
 
-const TodoList = ({ dispatch, todos }) => {
+const TodoList = ({ todos }) => {
     return (
         <>
             {
                 todos.map(todo => (
-                    <TodoItem key={todo.id} dispatch={dispatch} todo={todo} />
+                    <TodoItem key={todo.id} todo={todo} />
                 ))
             }
         </>

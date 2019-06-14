@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import DeleteIcon from '@material-ui/icons/Delete';
 import IconButton from '@material-ui/core/IconButton';
+import { TodoContext } from '../../../utils/context';
 
 
-const TodoItem = ({ dispatch, todo }) => {
+const TodoItem = ({ todo }) => {
+    const dispatch = useContext(TodoContext);
 
     const handleChangeCheckbox = () => {
         dispatch({ type: 'TOGGLE_TODO', payload: { id: todo.id } });
