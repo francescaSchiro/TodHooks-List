@@ -10,6 +10,7 @@ import AddBoxIcon from '@material-ui/icons/AddBox';
 import IconButton from '@material-ui/core/IconButton';
 import { initialTodos } from './utils/db';
 import { filterReducer, todoReducer } from './utils/reducers';
+import { CssBaseline } from "@material-ui/core";
 
 
 /*
@@ -55,17 +56,20 @@ const App = () => {
   })
 
   return (
-    <div id='container'>
-      <Filter dispatch={dispatchFilter} />
-      <TodoList dispatch={dispatchTodos} todos={filteredTodos} />
+    <>
+      <CssBaseline />
+      <div id='container'>
+        <Filter dispatch={dispatchFilter} />
+        <TodoList dispatch={dispatchTodos} todos={filteredTodos} />
 
 
-      <form onSubmit={handleSubmit}>
-        <input type='text' value={task} onChange={handleChangeInput} placeholder='Type your next todo...' />
-        <IconButton type='submit' children={<AddBoxIcon />} />
-      </form>
+        <form onSubmit={handleSubmit}>
+          <input type='text' value={task} onChange={handleChangeInput} placeholder='Type your next todo...' />
+          <IconButton type='submit' children={<AddBoxIcon />} />
+        </form>
 
-    </div>
+      </div>
+    </>
   );
 }
 

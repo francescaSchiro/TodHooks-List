@@ -4,7 +4,6 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import IconButton from '@material-ui/core/IconButton';
 
 
-
 const TodoItem = ({ dispatch, todo }) => {
 
     const handleChangeCheckbox = () => {

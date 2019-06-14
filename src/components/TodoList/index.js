@@ -4,10 +4,6 @@ import TodoItem from './TodoItem';
 
 
 const TodoList = ({ dispatch, todos }) => {
-
-
-
-
     return (
         <>
             {
@@ -17,7 +13,6 @@ const TodoList = ({ dispatch, todos }) => {
             }
         </>
     )
-
 };
 
 export default TodoList;
