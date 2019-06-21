@@ -26,7 +26,7 @@ const AddTodo = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className='add-text-form'>
             <input type='text' value={task} onChange={handleChangeInput} placeholder='Type your next todo...' />
             <IconButton type='submit' children={<AddBoxIcon />} />
         </form>

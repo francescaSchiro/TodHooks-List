@@ -8,6 +8,9 @@ import Typography from '@material-ui/core/Typography';
 
 
 const StyledTabs = withStyles({
+  root: {
+    height: '55px',
+  },
   indicator: {
     display: 'flex',
     justifyContent: 'center',
