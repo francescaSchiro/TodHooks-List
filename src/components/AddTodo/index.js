@@ -3,7 +3,7 @@ import uuid from 'uuid/v4';
 
 import AddBoxIcon from '@material-ui/icons/AddBox';
 import IconButton from '@material-ui/core/IconButton';
-import { TodoContext } from '../../utils/context';
+import { TodoContext } from '../../containers/TodoApp/context';
 
 
 const AddTodo = () => {
@@ -16,7 +16,8 @@ const AddTodo = () => {
         if (task.trim() === '') {
             alert('Sorry, you cannot add an empty todo!')
         } else {
-            dispatch({ type: 'ADD_TODO', payload: { id: uuid(), task } });
+            dispatch({ type: 'ADD_TODO', 
+            payload: { id: uuid(), task } });
         }
         setTask('');
     };
@@ -27,7 +28,12 @@ const AddTodo = () => {
 
     return (
         <form onSubmit={handleSubmit} className='add-text-form'>
-            <input type='text' value={task} onChange={handleChangeInput} placeholder='Type your next todo...' />
+            <input 
+                placeholder='Type your next todo...' 
+                type='text' 
+                value={task} 
+                onChange={handleChangeInput} 
+            />
             <IconButton type='submit' children={<AddBoxIcon />} />
         </form>
     )

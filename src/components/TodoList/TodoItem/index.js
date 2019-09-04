@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 
 import DeleteIcon from '@material-ui/icons/Delete';
 import IconButton from '@material-ui/core/IconButton';
-import { TodoContext } from '../../../utils/context';
+import { TodoContext } from '../../../containers/TodoApp/context';
 
 
 const TodoItem = ({ todo }) => {

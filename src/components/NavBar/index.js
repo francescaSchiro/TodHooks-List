@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 
 import TodoApp from '../../containers/TodoApp';
+import Fetch from '../../containers/Fetch';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
@@ -62,11 +63,11 @@ export default function CustomizedTabs() {
     <div className={classes.root}>
       <div className={classes.demo2}>
         <StyledTabs value={value} onChange={handleChange}>
-          <StyledTab label="Workflows" />
+          <StyledTab label="Fetch" />
           <StyledTab label="TodoApp" />
           <StyledTab label="Connections" />
         </StyledTabs>
-      {value === 0 &&   <Typography className={classes.typography}>ciaone 1</Typography>}
+      {value === 0 &&   <Fetch />}
       {value === 1 &&   <TodoApp/>}
       {value === 2 &&   <Typography className={classes.typography}>ciaone 3</Typography>}
       

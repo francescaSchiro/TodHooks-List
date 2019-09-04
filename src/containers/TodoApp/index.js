@@ -3,9 +3,9 @@ import React, { useReducer } from "react";
 import Filter from '../../components/Filter';
 import TodoList from '../../components/TodoList';
 import AddTodo from "../../components/AddTodo";
-import { initialTodos } from '../../utils/db';
-import { filterReducer, todoReducer } from '../../utils/reducers';
-import { TodoContext } from '../../utils/context';
+import { initialTodos } from './db';
+import { filterReducer, todoReducer } from './reducers';
+import { TodoContext } from './context';
 
 
 const TodoApp = () => {
@@ -30,13 +30,13 @@ const TodoApp = () => {
 
   return (
     <>
-      <TodoContext.Provider value={dispatchTodos}>
         <div id='container'>
           <Filter dispatch={dispatchFilter} />
+      <TodoContext.Provider value={dispatchTodos}>
           <TodoList todos={filteredTodos} />
           <AddTodo />
-        </div>
       </TodoContext.Provider>
+        </div>
       
     </>
   );
